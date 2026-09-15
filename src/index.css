@@ -1,0 +1,133 @@
+@import "https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-50: .968 .022 152;
+  --primary-100: .93 .045 152;
+  --primary-200: .86 .075 152;
+  --primary-300: .765 .105 153;
+  --primary-400: .665 .125 153;
+  --primary-500: .555 .13 153;
+  --primary-600: .485 .122 153;
+  --primary-700: .42 .11 154;
+  --primary-800: .348 .09 156;
+  --primary-900: .312 .062 160;
+  --primary-950: .238 .048 162;
+
+  --accent-50: .973 .03 146;
+  --accent-100: .934 .072 146;
+  --accent-200: .882 .122 146;
+  --accent-300: .83 .168 147;
+  --accent-400: .78 .198 148;
+  --accent-500: .722 .208 148;
+  --accent-600: .638 .188 148;
+  --accent-700: .542 .158 148;
+  --accent-800: .442 .128 148;
+  --accent-900: .352 .1 148;
+  --accent-950: .24 .07 148;
+
+  --secondary-50: .974 .008 86;
+  --secondary-100: .944 .016 86;
+  --secondary-200: .894 .026 85;
+  --secondary-300: .826 .036 84;
+  --secondary-400: .73 .046 82;
+  --secondary-500: .632 .05 80;
+  --secondary-600: .532 .048 79;
+  --secondary-700: .436 .04 79;
+  --secondary-800: .344 .032 79;
+  --secondary-900: .276 .026 79;
+  --secondary-950: .204 .02 79;
+
+  --background-50: .991 .005 96;
+  --background-100: .975 .009 96;
+  --background-200: .95 .013 96;
+  --background-300: .912 .017 96;
+  --background-400: .845 .019 96;
+  --background-500: .748 .021 96;
+  --background-600: .638 .021 96;
+  --background-700: .518 .02 96;
+  --background-800: .398 .019 96;
+  --background-900: .298 .018 96;
+  --background-950: .2 .016 96;
+
+  --foreground-50: .972 .006 152;
+  --foreground-100: .932 .008 152;
+  --foreground-200: .862 .01 152;
+  --foreground-300: .752 .012 152;
+  --foreground-400: .622 .014 152;
+  --foreground-500: .5 .015 152;
+  --foreground-600: .412 .016 152;
+  --foreground-700: .332 .018 152;
+  --foreground-800: .272 .02 152;
+  --foreground-900: .222 .022 152;
+  --foreground-950: .15 .02 152;
+
+  --font-heading: "Plus Jakarta Sans", "Outfit", "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-label: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Plus Jakarta Sans", "Instrument Serif", ui-serif, Georgia, serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #fafcfb;
+  color: #042817;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-jakarta {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.font-manrope {
+  font-family: "Manrope", sans-serif;
+}
+
+.font-newsreader {
+  font-family: "Newsreader", Georgia, serif;
+}
+
+.font-dm-mono {
+  font-family: "DM Mono", monospace;
+}
+
+.mesh-texture {
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.043) 1px, transparent 1px), linear-gradient(rgba(255, 255, 255, 0.043) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes floaty {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes kenBurnsZoomIn {
+  0% {
+    transform: scale(1.0);
+  }
+  100% {
+    transform: scale(1.18);
+  }
+}
+
+.ken-burns-active {
+  animation: kenBurnsZoomIn 10s ease-out forwards;
+}

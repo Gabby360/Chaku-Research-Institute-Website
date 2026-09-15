@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 140" width="480" height="140">
+  <!-- Mulago Tree/Seeds Icon -->
+  <g transform="translate(15, 15)">
+    <circle cx="55" cy="55" r="48" fill="#00a854" opacity="0.1"/>
+    <!-- Central stylized plant/seeds -->
+    <path d="M 55 18 C 32 38 32 72 55 92 C 78 72 78 38 55 18 Z" fill="#00a854"/>
+    <path d="M 55 35 C 42 48 42 70 55 80 C 68 70 68 48 55 35 Z" fill="#FFFFFF"/>
+    <circle cx="55" cy="58" r="8" fill="#042817"/>
+  </g>
+
+  <!-- Mulago Foundation Text -->
+  <text x="135" y="65" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="900" font-size="52" fill="#042817" letter-spacing="4px">MULAGO</text>
+  <text x="138" y="100" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="22" fill="#00a854" letter-spacing="6px">FOUNDATION</text>
+</svg>

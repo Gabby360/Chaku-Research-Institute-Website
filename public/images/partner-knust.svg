@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 180" width="680" height="180">
+  <!-- KNUST Emblem Group -->
+  <g transform="translate(15, 10)">
+    <!-- Top Flame -->
+    <path d="M 65 5 C 60 18 50 25 50 35 C 50 48 60 52 65 52 C 70 52 80 48 80 35 C 80 25 70 18 65 5 Z" fill="#E52B2D"/>
+    <path d="M 65 15 C 62 23 57 28 57 34 C 57 42 62 45 65 45 C 68 45 73 42 73 34 C 73 28 68 23 65 15 Z" fill="#F8B100"/>
+    
+    <!-- Pot/Anvil Base -->
+    <ellipse cx="65" cy="52" rx="18" ry="6" fill="#222222"/>
+    <rect x="52" y="52" width="26" height="8" fill="#222222"/>
+
+    <!-- Eagle Wings & Body (Gold) -->
+    <path d="M 65 60 C 45 60 15 75 5 95 C 25 90 45 88 65 85 C 85 88 105 90 125 95 C 115 75 85 60 65 60 Z" fill="#F8B100" stroke="#CC8800" stroke-width="1.5"/>
+    <!-- Feather Detail Lines -->
+    <path d="M 15 90 Q 40 82 65 85 Q 90 82 115 90" fill="none" stroke="#222222" stroke-width="1.5"/>
+
+    <!-- Green Center Shield with Stool -->
+    <path d="M 45 85 Q 65 80 85 85 L 85 115 Q 65 125 45 115 Z" fill="#008844" stroke="#F8B100" stroke-width="2"/>
+    <!-- Stool icon in yellow -->
+    <path d="M 53 92 L 77 92 L 75 97 L 55 97 Z M 57 97 L 59 110 L 71 110 L 73 97 Z" fill="#F8B100"/>
+
+    <!-- Bottom Yellow Ribbon Banner -->
+    <path d="M 10 120 Q 65 142 120 120 L 125 132 Q 65 155 5 132 Z" fill="#F8B100" stroke="#CC8800" stroke-width="1"/>
+    <text x="65" y="132" font-family="'Times New Roman', serif" font-weight="bold" font-size="7.5" fill="#111111" text-anchor="middle">NYANSAPO WOSANE NO BADWENMA</text>
+  </g>
+
+  <!-- Right Text Column -->
+  <g transform="translate(160, 20)">
+    <text x="0" y="70" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="900" font-size="76" fill="#1d1d1d" letter-spacing="-1px">KNUST</text>
+    <text x="0" y="106" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="20" fill="#2b2b2b" letter-spacing="1px">KWAME NKRUMAH UNIVERSITY</text>
+    <text x="0" y="132" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="20" fill="#2b2b2b" letter-spacing="1px">OF SCIENCE AND TECHNOLOGY</text>
+  </g>
+</svg>

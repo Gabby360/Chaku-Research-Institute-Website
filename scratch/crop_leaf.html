@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+const img = new Image();
+img.src = '/images/chaku-logo-light.png';
+img.onload = () => {
+  const cropCanvas = document.createElement('canvas');
+  // Leaf mark is in top right: x: 290 to 558 (w: 268), y: 0 to 250 (h: 250)
+  cropCanvas.width = 268;
+  cropCanvas.height = 250;
+  const cctx = cropCanvas.getContext('2d');
+  cctx.drawImage(img, 290, 0, 268, 250, 0, 0, 268, 250);
+  
+  const cData = cctx.getImageData(0, 0, 268, 250);
+  for (let i = 0; i < cData.data.length; i += 4) {
+    const r = cData.data[i];
+    const g = cData.data[i+1];
+    const b = cData.data[i+2];
+    if (r > 220 && g > 220 && b > 220) {
+      cData.data[i+3] = 0; // Make background transparent
+    }
+  }
+  cctx.putImageData(cData, 0, 0);
+  const dataUrl = cropCanvas.toDataURL('image/png');
+  
+  fetch('http://localhost:9876/save', {
+    method: 'POST',
+    body: dataUrl
+  }).then(r => r.json()).then(res => {
+    document.body.innerHTML = '<h1>SAVED_SUCCESSFULLY</h1>';
+  });
+};
+</script>
+</body>
+</html>
