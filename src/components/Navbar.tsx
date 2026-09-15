@@ -225,62 +225,30 @@ export const Navbar: React.FC = () => {
         </button>
       </nav>
 
-      {/* Mobile Accordion Drawer */}
+      {/* Mobile Drawer (Clean main links only, no subsections on phones) */}
       {mobileMenuOpen && (
         <div className="border-b border-gray-200 bg-white px-4 py-6 shadow-xl backdrop-blur-lg lg:hidden max-h-[85vh] overflow-y-auto">
           <div className="flex flex-col gap-2">
-            {NAV_STRUCTURE.map((item) => {
-              const isExpanded = expandedMobileAccordion === item.label;
-              return (
-                <div key={item.href} className="border-b border-gray-100 pb-1">
-                  <div className="flex items-stretch justify-between rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors">
-                    <Link
-                      to={item.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className={`flex-1 py-3.5 px-4 text-base font-bold transition-colors ${
-                        pathname === item.href
-                          ? 'text-[#00a854]'
-                          : 'text-gray-900 hover:text-[#00a854]'
-                      }`}
-                    >
-                      {item.label}
-                    </Link>
+            {NAV_STRUCTURE.map((item) => (
+              <Link
+                key={item.href}
+                to={item.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`w-full block py-3.5 px-4 rounded-xl text-base font-bold transition-all ${
+                  pathname === item.href
+                    ? 'bg-[#eaf8f0] text-[#00a854] font-extrabold'
+                    : 'text-gray-900 hover:bg-gray-50 hover:text-[#00a854] active:bg-gray-100'
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
 
-                    {item.subsections && item.subsections.length > 0 && (
-                      <button
-                        onClick={() => setExpandedMobileAccordion(isExpanded ? null : item.label)}
-                        className="py-3.5 px-4 text-gray-500 hover:text-[#00a854] flex items-center justify-center min-w-[48px]"
-                        aria-label={`Toggle ${item.label} subsections`}
-                      >
-                        <i className={`ri-chevron-down-line text-lg transition-transform duration-200 ${isExpanded ? 'rotate-180 text-[#00a854]' : ''}`}></i>
-                      </button>
-                    )}
-                  </div>
-
-                  {/* Mobile Accordion Subsections */}
-                  {item.subsections && item.subsections.length > 0 && isExpanded && (
-                    <div className="mt-1 mb-2 ml-3 flex flex-col gap-1 border-l-2 border-[#00d66c]/40 pl-2">
-                      {item.subsections.map((sub, idx) => (
-                        <a
-                          key={idx}
-                          href={sub.href}
-                          onClick={(e) => handleSubLinkNav(sub.href, e)}
-                          className="w-full block py-2.5 px-3 rounded-lg text-xs sm:text-sm font-semibold text-gray-700 hover:bg-[#eaf8f0] hover:text-[#00a854] active:bg-[#d5f2e1] transition-all"
-                        >
-                          {sub.title}
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-
-            <div className="mt-4 flex flex-col gap-3 pt-2">
+            <div className="mt-4 flex flex-col gap-3 pt-3 border-t border-gray-100">
               <Link
                 to="/donate"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full rounded-md bg-[#00d66c] px-4 py-3 text-center text-xs font-extrabold text-[#042817] uppercase tracking-wider flex items-center justify-center gap-2"
+                className="w-full rounded-xl bg-[#00d66c] px-4 py-3.5 text-center text-xs font-extrabold text-[#042817] uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm"
               >
                 <span>DONATE</span>
                 <i className="ri-arrow-up-right-line text-sm font-bold"></i>
