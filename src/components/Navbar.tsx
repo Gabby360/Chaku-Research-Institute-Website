@@ -232,12 +232,12 @@ export const Navbar: React.FC = () => {
             {NAV_STRUCTURE.map((item) => {
               const isExpanded = expandedMobileAccordion === item.label;
               return (
-                <div key={item.href} className="border-b border-gray-100 pb-2">
-                  <div className="flex items-center justify-between">
+                <div key={item.href} className="border-b border-gray-100 pb-1">
+                  <div className="flex items-stretch justify-between rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors">
                     <Link
                       to={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className={`px-3 py-2 text-base font-bold transition-colors ${
+                      className={`flex-1 py-3.5 px-4 text-base font-bold transition-colors ${
                         pathname === item.href
                           ? 'text-[#00a854]'
                           : 'text-gray-900 hover:text-[#00a854]'
@@ -249,7 +249,8 @@ export const Navbar: React.FC = () => {
                     {item.subsections && item.subsections.length > 0 && (
                       <button
                         onClick={() => setExpandedMobileAccordion(isExpanded ? null : item.label)}
-                        className="p-2 text-gray-500 hover:text-[#00a854]"
+                        className="py-3.5 px-4 text-gray-500 hover:text-[#00a854] flex items-center justify-center min-w-[48px]"
+                        aria-label={`Toggle ${item.label} subsections`}
                       >
                         <i className={`ri-chevron-down-line text-lg transition-transform duration-200 ${isExpanded ? 'rotate-180 text-[#00a854]' : ''}`}></i>
                       </button>
@@ -258,13 +259,13 @@ export const Navbar: React.FC = () => {
 
                   {/* Mobile Accordion Subsections */}
                   {item.subsections && item.subsections.length > 0 && isExpanded && (
-                    <div className="mt-2 ml-3 flex flex-col gap-1 border-l-2 border-[#00d66c]/40 pl-3">
+                    <div className="mt-1 mb-2 ml-3 flex flex-col gap-1 border-l-2 border-[#00d66c]/40 pl-2">
                       {item.subsections.map((sub, idx) => (
                         <a
                           key={idx}
                           href={sub.href}
                           onClick={(e) => handleSubLinkNav(sub.href, e)}
-                          className="block py-2 text-xs font-semibold text-gray-600 hover:text-[#00a854]"
+                          className="w-full block py-2.5 px-3 rounded-lg text-xs sm:text-sm font-semibold text-gray-700 hover:bg-[#eaf8f0] hover:text-[#00a854] active:bg-[#d5f2e1] transition-all"
                         >
                           {sub.title}
                         </a>
